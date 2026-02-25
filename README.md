@@ -23,7 +23,7 @@ Landing page profissional desenvolvida do zero para treinar **HTML, CSS e organi
 - JavaScript (leve, se necessário)
 
 ## 🚀 Como rodar
-GitHub Pages: https://joaolemos01.github.io/landing-3d/
+GitHub Pages: https://github.com/joaolemos01/landing-3d.git
 
 ## 📌 Status
 Em desenvolvimento.

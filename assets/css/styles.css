@@ -1,99 +1,185 @@
-/* Reset profissional */
-:root {
-  --color-bg: #081427;
-  --color-text: #eaeaea;
-  --color-primary: #00B8D9;
+/* ============================================================
+   VARIÁVEIS GLOBAIS
+============================================================ */
+:root { /* Define variáveis CSS globais acessíveis em todo o projeto */
+  --color-bg: #081427; /* Cor de fundo principal (azul escuro) */
+  --color-text: #eaeaea; /* Cor padrão do texto (cinza claro) */
+  --color-primary: #00B8D9; /* Cor de destaque/principal (ciano) */
 
-  --container-width: 75rem;
-  --spacing-base: 1rem;
+  --container-width: 75rem; /* Largura máxima do container (~1200px) */
+  --spacing-base: 1rem; /* Espaçamento padrão (16px) */
+  --color-header: #0E1B33; /* Fundo levemente mais claro que o body */
 }
 
+/* ============================================================
+   RESET GLOBAL
+============================================================ */
 *,
 *::before,
 *::after {
+  /* Inclui padding + border no cálculo de largura/altura. */
   box-sizing: border-box;
 }
 
 * {
+  /* Remove margin padrão de todos os elementos */
   margin: 0;
+  /* Remove padding padrão de todos os elementos */
   padding: 0;
 }
 
+/* ============================================================
+   ESTILOS DO BODY
+============================================================ */
 body {
+  /* Define a fonte do projeto */
   font-family: 'Poppins', sans-serif; 
+  /* Aplica cor de fundo da variável global */
   background-color: var(--color-bg);
+  /* Aplica cor de texto da variável global */
   color: var(--color-text);
+  /* Define espaçamento vertical entre linhas */
   line-height: 1.6;
 }
 
-/* LISTA - Remove bolinhas */
+/* ============================================================
+   LISTAS
+============================================================ */
+/* Remove as bolinhas padrão das listas */
 ul {
     list-style: none;
 }
 
-/* LINKS - Remove padrão, herda cor */
+/* ============================================================
+   LINKS
+============================================================ */
+/* Remove sublinhado padrão e herda a cor do elemento pai */
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* NAV LINKS - Específico para navegação */
+/* ============================================================
+   HEADER / NAV LAYOUT
+============================================================ */
+.nav .container {
+  display: flex; /* organiza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  gap: 2rem; /* espaço entre logo e menu */
+  padding: calc(var(--spacing-base) / 2); /* padding proporcional ao sistema */
+}
+
+.nav .btn {
+  margin-left: auto; /* empurra botão para direita */
+}
+
+.nav {
+  background-color: var(--color-header);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.30);
+}
+
+/* ============================================================
+   NAVEGAÇÃO
+============================================================ */
+/* Organiza os itens da lista em linha horizontal com espaçamento */
 .nav__list {
     display: flex;
     gap: 2rem;
     list-style: none;
 }
 
+/* Estilo específico dos links de navegação */
 .nav__link {
     color: var(--color-text);
+    /* Transição suave ao passar o mouse */
     transition: color 0.3s ease;
 }
 
+/* Muda a cor ao passar o mouse sobre o link */
 .nav__link:hover {
     color: var(--color-primary);
 }
 
+/* ============================================================
+   CONTAINER
+============================================================ */
+/* Container responsivo que centraliza o conteúdo */
 .container {
+    /* Ocupa toda a largura disponível */
     width: 100%;
+    /* Define largura máxima para não ficar muito largo */
     max-width: var(--container-width);
+    /* Centraliza o container horizontalmente */
     margin: 0 auto;
+    /* Adiciona pequeno espaçamento lateral (não cola nas bordas) */
     padding: 0 var(--spacing-base);
 }
 
-/* BASE - Estrutura sem cor */
+/* ============================================================
+   BOTÕES
+============================================================ */
+/* Base do botão - estrutura sem cor */
 .btn {
+    /* Flexbox para alinhamento perfeito de conteúdo */
     display: inline-flex;
+    /* Alinha itens verticalmente no centro */
     align-items: center;
+    /* Alinha itens horizontalmente no centro */
     justify-content: center;
+    /* Espaçamento interno: 1rem (cima/baixo), 2rem (esquerda/direita) */
     padding: var(--spacing-base) calc(var(--spacing-base) * 2);
+    /* Bordas arredondadas modernas */
     border-radius: 0.5rem;
+    /* Remove sublinhado padrão dos links */
     text-decoration: none;
+    /* Texto em negrito */
     font-weight: 600;
+    /* Transição suave para todos os efeitos */
     transition: all 0.3s ease;
+    /* Muda o cursor para pointer ao passar por cima */
     cursor: pointer;
+    /* Borda transparente (será sobrescrita pelas variantes) */
     border: 2px solid transparent;
 }
 
-/* VARIANTE PRIMÁRIA */
+/* ============================================================
+   BOTÃO - VARIANTE PRIMÁRIA
+============================================================ */
+/* Botão principal com fundo colorido */
 .btn--primary {
+    /* Fundo com cor principal */
     background-color: var(--color-primary);
+    /* Texto com cor de fundo (contraste) */
     color: var(--color-bg);
 }
 
+/* Efeito ao passar o mouse no botão primário */
 .btn--primary:hover {
+    /* Reduz opacidade para efeito visual */
     opacity: 0.9;
+    /* Levanta o botão 2px para efeito de elevação */
     transform: translateY(-2px);
 }
 
-/* VARIANTE SECUNDÁRIA */
+/* ============================================================
+   BOTÃO - VARIANTE SECUNDÁRIA
+============================================================ */
+/* Botão secundário com borda e fundo transparente */
 .btn--secondary {
+    /* Sem cor de fundo */
     background-color: transparent;
+    /* Texto com cor principal */
     color: var(--color-primary);
+    /* Borda com cor principal */
     border: 2px solid var(--color-primary);
 }
 
+/* Efeito ao passar o mouse no botão secundário */
 .btn--secondary:hover {
+    /* Preenche com cor principal ao passar o mouse */
     background-color: var(--color-primary);
+    /* Muda cor do texto para contraste */
     color: var(--color-bg);
+    /* Levanta o botão 2px para efeito de elevação */
     transform: translateY(-2px);
 }

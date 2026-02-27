@@ -67,6 +67,8 @@ a {
   align-items: center; /* centraliza verticalmente */
   gap: 2rem; /* espaço entre logo e menu */
   padding: calc(var(--spacing-base) / 4); /* padding proporcional ao sistema */
+
+  justify-content: space-between; /* separa esquerda e direita */
 }
 
 .nav .btn {
@@ -74,8 +76,14 @@ a {
 }
 
 .nav {
-  background-color: var(--color-header);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-header); /* Cor para HEADER mais clara */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra do HEADER */
+}
+
+.nav__right {
+  display: flex;        /* transforma a div em layout horizontal */
+  align-items: center;  /* alinha links e botão no centro vertical */
+  gap: 2rem;            /* cria espaço uniforme entre links e botão */
 }
 
 /* ============================================================

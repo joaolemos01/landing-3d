@@ -1,60 +1,56 @@
 /* ============================================================
    VARIÁVEIS GLOBAIS
 ============================================================ */
-:root { /* Define variáveis CSS globais acessíveis em todo o projeto */
-  --color-bg: #081427; /* Cor de fundo principal (azul escuro) */
-  --color-text: #eaeaea; /* Cor padrão do texto (cinza claro) */
-  --color-primary: #00B8D9; /* Cor de destaque/principal (ciano) */
 
-  --container-width: 75rem; /* Largura máxima do container (~1200px) */
-  --spacing-base: 1rem; /* Espaçamento padrão (16px) */
-  --color-header: #0E1B33; /* Fundo levemente mais claro que o body */
+:root {                                       /* Define variáveis CSS globais acessíveis em todo o projeto */
+  --color-bg: #081427;                      /* Cor de fundo principal (azul escuro) */
+  --color-text: #eaeaea;                    /* Cor padrão do texto (cinza claro) */
+  --color-primary: #00B8D9;                 /* Cor de destaque/principal (ciano) */
+
+  --container-width: 75rem;                    /* Largura máxima do container (~1200px) */
+  --spacing-base: 1rem;                        /* Espaçamento padrão (16px) */
+  --color-header: #0E1B33;                   /* Fundo levemente mais claro que o body */
 }
 
 /* ============================================================
    RESET GLOBAL
 ============================================================ */
+
 *,
 *::before,
 *::after {
-  /* Inclui padding + border no cálculo de largura/altura. */
-  box-sizing: border-box;
+  box-sizing: border-box;                      /* Inclui padding + border no cálculo de largura/altura. */
 }
 
-* {
-  /* Remove margin padrão de todos os elementos */
-  margin: 0;
-  /* Remove padding padrão de todos os elementos */
-  padding: 0;
+*{
+  margin: 0;                                 /* Remove margin padrão de todos os elementos */
+  padding: 0;                                /* Remove padding padrão de todos os elementos */
 }
 
 /* ============================================================
    ESTILOS DO BODY
 ============================================================ */
+
 body {
-  /* Define a fonte do projeto */
-  font-family: 'Poppins', sans-serif; 
-  /* Aplica cor de fundo da variável global */
-  background-color: var(--color-bg);
-  /* Aplica cor de texto da variável global */
-  color: var(--color-text);
-  /* Define espaçamento vertical entre linhas */
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;           /* Define a fonte do projeto */
+  background-color: var(--color-bg);            /* Aplica cor de fundo da variável global */
+  color: var(--color-text);                     /* Aplica cor de texto da variável global */
+  line-height: 1.6;                             /* Define espaçamento vertical entre linhas */
 }
 
 /* ============================================================
    LISTAS
 ============================================================ */
-/* Remove as bolinhas padrão das listas */
-ul {
+
+ul {                                              /* Remove as bolinhas padrão das listas */
     list-style: none;
 }
 
 /* ============================================================
    LINKS
 ============================================================ */
-/* Remove sublinhado padrão e herda a cor do elemento pai */
-a {
+
+a {                                                /* Remove sublinhado padrão e herda a cor do elemento pai */
     color: inherit;
     text-decoration: none;
 }
@@ -62,132 +58,180 @@ a {
 /* ============================================================
    HEADER / NAV LAYOUT
 ============================================================ */
-.nav .container {
-  display: flex; /* organiza horizontalmente */
-  align-items: center; /* centraliza verticalmente */
-  gap: 2rem; /* espaço entre logo e menu */
-  padding: calc(var(--spacing-base) / 4); /* padding proporcional ao sistema */
 
-  justify-content: space-between; /* separa esquerda e direita */
+.nav .container {
+  display: flex;                                   /* organiza horizontalmente */
+  align-items: center;                             /* centraliza verticalmente */
+  gap: 2rem;                                       /* espaço entre logo e menu */
+  padding: calc(var(--spacing-base) / 4);          /* padding proporcional ao sistema */
+
+  justify-content: space-between;                  /* separa esquerda e direita */
 }
 
 .nav .btn {
-  margin-left: auto; /* empurra botão para direita */
+  margin-left: auto;                               /* empurra botão para direita */
 }
 
 .nav {
-  background-color: var(--color-header); /* Cor para HEADER mais clara */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra do HEADER */
+  background-color: var(--color-header);           /* Cor para HEADER mais clara */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);    /* Sombra do HEADER */
 }
 
 .nav__right {
-  display: flex;        /* transforma a div em layout horizontal */
-  align-items: center;  /* alinha links e botão no centro vertical */
-  gap: 2rem;            /* cria espaço uniforme entre links e botão */
+  display: flex;                             /* transforma a div em layout horizontal */
+  align-items: center;                       /* alinha links e botão no centro vertical */
+  gap: 2rem;                                 /* cria espaço uniforme entre links e botão */
 }
 
 /* ============================================================
    NAVEGAÇÃO
 ============================================================ */
-/* Organiza os itens da lista em linha horizontal com espaçamento */
-.nav__list {
+
+.nav__list {                                    /* Organiza os itens da lista em linha horizontal com espaçamento */
     display: flex;
     gap: 2rem;
     list-style: none;
 }
 
-/* Estilo específico dos links de navegação */
-.nav__link {
+.nav__link {                                    /* Estilo específico dos links de navegação */
     color: var(--color-text);
-    /* Transição suave ao passar o mouse */
-    transition: color 0.3s ease;
+    transition: color 0.3s ease;                /* Transição suave ao passar o mouse */
 }
 
-/* Muda a cor ao passar o mouse sobre o link */
-.nav__link:hover {
+.nav__link:hover {                               /* Muda a cor ao passar o mouse sobre o link */
     color: var(--color-primary);
 }
 
 /* ============================================================
    CONTAINER
 ============================================================ */
-/* Container responsivo que centraliza o conteúdo */
-.container {
-    /* Ocupa toda a largura disponível */
-    width: 100%;
-    /* Define largura máxima para não ficar muito largo */
-    max-width: var(--container-width);
-    /* Centraliza o container horizontalmente */
-    margin: 0 auto;
-    /* Adiciona pequeno espaçamento lateral (não cola nas bordas) */
-    padding: 0 var(--spacing-base);
+
+.container {                                    /* Container responsivo que centraliza o conteúdo */
+    width: 100%;                                /* Ocupa toda a largura disponível */
+    max-width: var(--container-width);          /* Define largura máxima para não ficar muito largo */
+    margin: 0 auto;                             /* Centraliza o container horizontalmente */
+    padding: 0 var(--spacing-base);             /* Adiciona pequeno espaçamento lateral (não cola nas bordas) */
 }
 
 /* ============================================================
    BOTÕES
 ============================================================ */
-/* Base do botão - estrutura sem cor */
-.btn {
-    /* Flexbox para alinhamento perfeito de conteúdo */
-    display: inline-flex;
-    /* Alinha itens verticalmente no centro */
-    align-items: center;
-    /* Alinha itens horizontalmente no centro */
-    justify-content: center;
-    /* Espaçamento interno: 1rem (cima/baixo), 2rem (esquerda/direita) */
-    padding: var(--spacing-base) calc(var(--spacing-base) * 2);
-    /* Bordas arredondadas modernas */
-    border-radius: 0.5rem;
-    /* Remove sublinhado padrão dos links */
-    text-decoration: none;
-    /* Texto em negrito */
-    font-weight: 600;
-    /* Transição suave para todos os efeitos */
-    transition: all 0.3s ease;
-    /* Muda o cursor para pointer ao passar por cima */
-    cursor: pointer;
-    /* Borda transparente (será sobrescrita pelas variantes) */
-    border: 2px solid transparent;
+
+.btn {                                                              /* Base do botão - estrutura sem cor */
+    display: inline-flex;                                           /* Flexbox para alinhamento perfeito de conteúdo */
+    align-items: center;                                            /* Alinha itens verticalmente no centro */
+    justify-content: center;                                        /* Alinha itens horizontalmente no centro */
+    padding: var(--spacing-base) calc(var(--spacing-base) * 2);     /* Espaçamento interno: 1rem (cima/baixo), 2rem (esquerda/direita) */
+    border-radius: 0.5rem;                                          /* Bordas arredondadas modernas */
+    text-decoration: none;                                          /* Remove sublinhado padrão dos links */
+    font-weight: 500;                                               /* Texto em negrito */
+    transition: all 0.3s ease;                                      /* Transição suave para todos os efeitos */
+    cursor: pointer;                                                /* Muda o cursor para pointer ao passar por cima */
+    border: 2px solid transparent;                                  /* Borda transparente (será sobrescrita pelas variantes) */
+    padding: 0.9rem 2rem;                                           /* tamanho confortável */
 }
 
 /* ============================================================
    BOTÃO - VARIANTE PRIMÁRIA
 ============================================================ */
-/* Botão principal com fundo colorido */
-.btn--primary {
-    /* Fundo com cor principal */
-    background-color: var(--color-primary);
-    /* Texto com cor de fundo (contraste) */
-    color: var(--color-bg);
+
+.btn--primary {                                 /* Botão principal com fundo colorido */
+    background-color: var(--color-primary);     /* Fundo com cor principal */
+    color: var(--color-bg);                     /* Texto com cor de fundo (contraste) */
 }
 
-/* Efeito ao passar o mouse no botão primário */
-.btn--primary:hover {
-    /* Reduz opacidade para efeito visual */
-    opacity: 0.9;
-    /* Levanta o botão 2px para efeito de elevação */
-    transform: translateY(-2px);
+.btn--primary:hover {                           /* Efeito ao passar o mouse no botão primário */
+    opacity: 0.9;                               /* Reduz opacidade para efeito visual */
+    transform: translateY(-2px);                /* Levanta o botão 2px para efeito de elevação */
 }
 
 /* ============================================================
    BOTÃO - VARIANTE SECUNDÁRIA
 ============================================================ */
-/* Botão secundário com borda e fundo transparente */
-.btn--secondary {
-    /* Sem cor de fundo */
-    background-color: transparent;
-    /* Texto com cor principal */
-    color: var(--color-primary);
-    /* Borda com cor principal */
-    border: 2px solid var(--color-primary);
+
+.btn--secondary {                               /* Botão secundário com borda e fundo transparente */
+    background-color: transparent;              /* Sem cor de fundo */
+    color: var(--color-primary);                /* Texto com cor principal */
+    border: 2px solid var(--color-primary);     /* Borda com cor principal */
+    opacity: 0.9;                               /* diferença leve */
 }
 
-/* Efeito ao passar o mouse no botão secundário */
-.btn--secondary:hover {
-    /* Preenche com cor principal ao passar o mouse */
-    background-color: var(--color-primary);
-    /* Muda cor do texto para contraste */
-    color: var(--color-bg);
-    /* Levanta o botão 2px para efeito de elevação */
-    transform: translateY(-2px);
+.btn--secondary:hover {                         /* Efeito ao passar o mouse no botão secundário */
+    background-color: var(--color-primary);     /* Preenche com cor principal ao passar o mouse */
+    color: var(--color-bg);                     /* Muda cor do texto para contraste */
+    transform: translateY(-2px);                /* Levanta o botão 2px para efeito de elevação */
+}
+
+/* ============================================================
+   HERO - TIPOGRAFIA
+============================================================ */
+
+.hero h1 {
+  font-size: 3rem;          /* tamanho grande mas não exagerado */
+  font-weight: 600;         /* peso elegante (não ultra bold) */
+  line-height: 1.2;         /* aproxima as linhas se quebrar */
+  margin-bottom: 1rem;      /* espaço abaixo do título */
+}
+
+.hero p {
+  font-size: 1.125rem;      /* levemente maior que texto normal */
+  opacity: 0.8;             /* suaviza para não competir com h1 */
+  margin-bottom: 2rem;      /* separa dos botões */
+}
+
+/* ============================================================
+   HERO - LAYOUT TEXTO + IMAGEM
+============================================================ */
+
+.hero {
+  min-height: 90vh;          /* mantém impacto */
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.hero__container {
+  display: flex;             /* coloca texto e imagem lado a lado */
+  align-items: center;       /* alinha verticalmente */
+  justify-content: space-between;
+  gap: 6rem;                 /* espaço entre texto e imagem */
+}
+
+.hero__text {
+  flex: 1;                   /* ocupa metade */
+  text-align: center;        /* centraliza promessa e subtítulo */
+  max-width: 800px;          /* limitar a largura do texto */
+}
+
+.hero__image {
+  flex: 1;                   /* ocupa metade */
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   HERO - BOTÕES VERTICAIS
+============================================================ */
+
+.hero__actions {
+  display: flex;            /* ativa flexbox */
+  flex-direction: column;   /* coloca um abaixo do outro */
+  align-items: center;      /* centraliza os botões */
+  gap: 1rem;                /* espaço entre eles */
+}
+
+/* ============================================================
+   HERO - ALTURA DE IMPACTO
+============================================================ */
+
+.hero {
+  min-height: 90vh;          /* ocupa 90% da altura da tela */
+  display: flex;             /* ativa flex */
+  align-items: center;       /* centraliza verticalmente */
+  padding: 6rem 0;           /* respiro interno */
 }

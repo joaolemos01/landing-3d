@@ -235,3 +235,81 @@ a {                                                /* Remove sublinhado padrão 
   align-items: center;       /* centraliza verticalmente */
   padding: 6rem 0;           /* respiro interno */
 }
+
+/* ============================================================
+   SEÇÃO: COMO FUNCIONA
+============================================================ */
+
+.how {                              /* Define espaçamento vertical da seção */
+  padding: 6rem 0;                  /* 6rem em cima e embaixo, 0 nas laterais */
+  background-color: #071a2d;      /* Fundo levemente diferente do hero para separar visualmente */
+  text-align: center;               /* Centraliza título e subtítulo */
+}
+
+
+.section-header {                   /* Bloco que contém o título e subtítulo */
+  margin-bottom: 4rem;              /* Espaço abaixo do cabeçalho antes dos cards */
+}
+
+
+.section-header h2 {                /* Estiliza o título da seção */
+  font-size: 2.2rem;                /* Aumenta tamanho do título */
+  margin-bottom: 1rem;              /* Espaço entre título e subtítulo */
+}
+
+.section-header p {                 /* Estiliza o subtítulo */
+  opacity: 0.8;                     /* Deixa o texto um pouco mais suave */
+}
+
+.how__steps {                       /* Container dos 3 passos */
+  display: flex;                    /* Coloca os passos lado a lado */
+  justify-content: space-between;   /* Distribui espaço entre eles */
+  gap: 2rem;                        /* Espaço fixo entre cada passo */
+}
+
+.step {                             /* Cada card individual */
+  flex: 1;                          /* Cada passo ocupa o mesmo espaço */
+  padding: 2rem;                    /* Espaçamento interno */
+  background-color: #0c2238;      /* Fundo levemente mais claro para destacar do fundo */
+  border-radius: 8px;               /* Cantos arredondados para suavizar visual */
+}
+
+/* ============================================================
+   COMO FUNCIONA - ESTILO MODERNO COM NÚMERO GRANDE
+============================================================ */
+
+.how__steps {                     /* Container dos passos continua flex */
+  display: flex;                  /* coloca os cards lado a lado */
+  gap: 2rem;                      /* espaço entre eles */
+}
+
+.step {                           /* Cada card */
+  position: relative;             /* necessário para posicionar o número absoluto dentro */
+  flex: 1;                        /* todos ocupam o mesmo espaço */
+  padding: 3rem 2rem;             /* mais espaço interno para dar respiro */
+  background-color: #0c2238;    /* fundo levemente diferente */
+  border-radius: 12px;            /* cantos mais arredondados para modernizar */ 
+  overflow: hidden;               /* impede o número de “vazar” para fora */
+}
+
+.step__number {                           /* Número decorativo moderno */
+  position: absolute;                     /* permite posicionar livremente dentro do card */
+  top: -20px;                             /* sobe um pouco para cortar no topo */
+  right: -20px;                           /* joga para fora do lado direito */
+  font-size: 8rem;                        /* bem maior para impacto visual */
+  font-weight: 800;                       /* mais pesado que bold */
+  color: rgba(255, 255, 255, 0.04);     /* quase invisível → apenas textura visual */
+  pointer-events: none;                   /* não interfere com clique */
+  z-index: 0;                             /* fica atrás do conteúdo */
+}
+
+.step h3 {                      /* Título do passo */
+  position: relative;           /* garante que fique acima do número */
+  margin-bottom: 1rem;          /* espaço entre título e texto */
+  font-size: 1.3rem;            /* tamanho levemente maior */
+}
+
+.step p {                       /* Texto do passo */
+  position: relative;           /* também fica acima do número */
+  opacity: 0.85;                /* leve suavização */
+}

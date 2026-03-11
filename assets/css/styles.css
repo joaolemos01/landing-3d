@@ -313,3 +313,152 @@ a {                                                /* Remove sublinhado padrão 
   position: relative;           /* também fica acima do número */
   opacity: 0.85;                /* leve suavização */
 }
+
+/* ============================================================
+   SEÇÃO: BENEFÍCIOS
+============================================================ */
+
+.benefits {
+  padding: 6rem 0;                  /* Espaçamento vertical da seção */
+  background-color: #0a1f33;      /* Fundo levemente diferente da seção anterior */
+}
+
+.benefits__grid {
+  display: grid;                           /* Ativa layout em grade */
+  grid-template-columns: repeat(2, 1fr);   /* Cria 2 colunas iguais */
+  gap: 2rem;                               /* Espaço entre os cards */
+}
+
+.benefit {
+  padding: 2rem;                  /* Espaçamento interno */
+  background-color: #0c2238;    /* Cor do card */
+  border-radius: 12px;            /* Cantos arredondados */
+  transition: 0.3s ease;          /* Suaviza efeito hover */
+}
+
+.benefit:hover {
+  transform: translateY(-5px);    /* Sobe levemente ao passar o mouse */
+}
+
+.benefit h3 {
+  margin-bottom: 1rem;            /* Espaço entre título e texto */
+}
+
+.benefit p {
+  opacity: 0.85;                  /* Suaviza o texto */
+}
+
+
+/* ============================================================
+   CARD DE BENEFÍCIO
+============================================================ */
+
+.benefit {
+  padding: 2rem;                                /* Espaçamento interno do card */
+  background-color: #0c2238;                  /* Fundo do card levemente diferente do fundo da seção */
+  border-radius: 12px;                          /* Cantos arredondados deixam o visual mais moderno */
+  border: 1px solid rgba(255,255,255,0.05);   /* Borda extremamente sutil para destacar do fundo */
+  transition: 0.3s ease;                        /* Faz as animações acontecerem suavemente */
+}
+
+.benefit:hover {                                  /* Efeito ao passar o mouse */    
+
+  transform: translateY(-6px);                    /* Card sobe levemente criando sensação de profundidade */
+  border-color: rgba(0,194,255,0.6);            /* Borda ganha cor azul tech ao passar o mouse */
+  box-shadow: 0 0 20px rgba(0,194,255,0.15);    /* Glow azul suave ao redor do card */
+}
+
+/* ============================================================
+   SEÇÃO PROJETOS
+============================================================ */
+
+.projects {
+  padding: 6rem 0;          /* Espaçamento vertical da seção */
+}
+
+.carousel {                 /* container do carrossel */
+  position: relative;       /* permite posicionar os botões sobre o carrossel */
+  overflow: hidden;         /* esconde imagens que saírem da área */
+}
+
+.carousel__track {                  /* trilho que se move */
+  display: flex;                    /* coloca os itens lado a lado */
+  transition: transform 0.4s ease;  /* anima o movimento do carrossel */
+}
+
+.carousel__item {       /* cada item */
+  min-width: 100%;      /* cada imagem ocupa toda largura do carrossel */
+}
+
+.carousel__item img {     /* imagem */
+  width: 100%;            /* imagem ocupa todo o card */
+  border-radius: 12px;    /* cantos arredondados */
+}
+
+.carousel__btn {                  /* botões de navegação */
+  position: absolute;             /* permite colocar sobre o carrossel */
+  top: 50%;                       /* posiciona verticalmente no meio */
+  transform: translateY(-50%);    /* ajusta alinhamento perfeito */
+  background: rgba(0,0,0,0.5);  /* fundo semi transparente */
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;                /* muda cursor para clique */
+}
+
+.prev {                           /* botão esquerda */
+  left: 10px;
+}
+
+.next {                           /* botão direita */
+  right: 10px;
+}
+
+/* ============================================================
+   CARROSSEL PROJETOS
+============================================================ */
+
+.carousel {
+  position: relative;      /* permite posicionar os botões dentro do carrossel */
+  overflow: hidden;        /* esconde itens que saem da área visível */
+}
+
+.carousel__track {
+  display: flex;                        /* coloca os itens lado a lado */
+  gap: 2rem;                            /* espaço entre os projetos */
+  transition: transform 0.4s ease;      /* anima o movimento do carrossel */
+}
+
+.carousel__item {
+  min-width: calc(33.333% - 1.33rem); 
+  /* cada item ocupa 1/3 da largura */
+  /* -1.33rem compensa o gap para manter alinhado */
+}
+
+.carousel__item img {
+  width: 100%;               /* imagem ocupa toda largura do card */
+  border-radius: 12px;       /* cantos arredondados */
+  display: block;            /* remove espaço estranho de imagem inline */
+}
+
+.carousel__btn {                       /* botões */
+  position: absolute;                  /* coloca os botões sobre o carrossel */
+  top: 50%;                            /* centraliza verticalmente */
+  transform: translateY(-50%);         /* corrige o alinhamento */
+  background: rgba(0,0,0,0.6);       /* fundo escuro transparente */
+  border: none; 
+  color: white;
+  font-size: 2rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;                     /* indica que é clicável */
+  border-radius: 8px;
+}
+
+.prev {
+  left: -10px;         /* posiciona botão esquerdo */
+}
+
+.next {
+  right: -10px;        /* posiciona botão direito */
+}
